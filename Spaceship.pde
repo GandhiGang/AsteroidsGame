@@ -1,7 +1,8 @@
 class Spaceship extends Floater  
 {   
     public Spaceship(){
-    	myDirectionX=myDirectionY=myPointDirection=myColor=0;
+    	myDirectionX=myDirectionY=myPointDirection=0;
+    	myColor=255;
     	myCenterX=myCenterY=250;
     	corners = 12;
     	xCorners = new int[corners];
@@ -58,7 +59,20 @@ class Spaceship extends Floater
       vertex(xCorners[nI], yCorners[nI]);
     }
     endShape(CLOSE);
-
+    if(wIsPressed){
+    stroke(255, 140, 0);
+    strokeWeight(3);
+    line(-12, 0, -18, 0);
+    line(-12, -6, -16, -9);
+    line(-12, 6, -16, 9);
+	}
+	if(sIsPressed){
+    stroke(64, 64, 255);
+    strokeWeight(3);
+    line(-12, 0, -18, 0);
+    line(-12, -6, -16, -9);
+    line(-12, 6, -16, 9);
+	}
     //"unrotate" and "untranslate" in reverse order
     rotate(-1*dRadians);
     translate(-1*(float)myCenterX, -1*(float)myCenterY);

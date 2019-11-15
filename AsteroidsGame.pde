@@ -13,7 +13,8 @@ public void setup()
 }
 public void draw() 
 {
-	background(192);
+	background(0);
+	noStroke();
 	for(int i = 0; i < gamer.length; i++)
   		gamer[i].show();
 	epic.show();
