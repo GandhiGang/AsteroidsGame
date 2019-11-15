@@ -14,10 +14,10 @@ public void setup()
 public void draw() 
 {
 	background(192);
-	epic.show();
-	epic.move();
 	for(int i = 0; i < gamer.length; i++)
   		gamer[i].show();
+	epic.show();
+	epic.move();
 	if(wIsPressed)
 		epic.accelerate(0.1);
 	if(sIsPressed)
