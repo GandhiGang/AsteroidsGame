@@ -1,5 +1,6 @@
 Spaceship epic = new Spaceship();
 Star [] gamer = new Star[200];
+Asteroid bob = new Asteroid();
 boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
@@ -17,6 +18,8 @@ public void draw()
 	noStroke();
 	for(int i = 0; i < gamer.length; i++)
   		gamer[i].show();
+  	bob.show();
+	bob.move();
 	epic.show();
 	epic.move();
 	if(wIsPressed)

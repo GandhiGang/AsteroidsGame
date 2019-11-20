@@ -37,6 +37,7 @@ class Spaceship extends Floater
     	myDirectionX=myDirectionY=0;
     	myCenterX = Math.random()*500;
     	myCenterY = Math.random()*500;
+    	myPointDirection = Math.random()*360;
     }
     public void show ()  //Draws the floater at the current position  
     {             
