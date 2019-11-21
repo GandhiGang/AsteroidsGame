@@ -1,6 +1,6 @@
 Spaceship epic = new Spaceship();
 Star [] gamer = new Star[200];
-Asteroid bob = new Asteroid();
+ArrayList <Asteroid> balls = new ArrayList <Asteroid>();
 boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
@@ -11,6 +11,8 @@ public void setup()
   size(500, 500);
   for(int i = 0; i < gamer.length; i++)
   	gamer[i] = new Star();
+  for(int i = 0; i < 20; i++)
+  	balls.add(new Asteroid());
 }
 public void draw() 
 {
@@ -18,8 +20,15 @@ public void draw()
 	noStroke();
 	for(int i = 0; i < gamer.length; i++)
   		gamer[i].show();
-  	bob.show();
-	bob.move();
+  	for(int i = 0; i < balls.size(); i++){
+  		balls.get(i).move();
+  		balls.get(i).show();
+  		if(dist((float)epic.getX(), (float)epic.getY(), (float)balls.get(i).getX(), (float)balls.get(i).getY()) < 20){
+  			balls.remove(i);
+  			i--;
+  		}	
+  		
+  	}	
 	epic.show();
 	epic.move();
 	if(wIsPressed)
