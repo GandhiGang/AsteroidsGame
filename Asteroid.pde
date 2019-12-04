@@ -9,26 +9,8 @@ class Asteroid extends Floater{
 		myDirectionX = Math.random()*6-3;
 		myDirectionY = Math.random()*6-3;
 		corners = 9;
-		xCorners = new int[corners];
-    	yCorners = new int[corners];
-    	xCorners[0] = 0;
-    	xCorners[1] = 7;
-    	xCorners[2] = 9;
-    	xCorners[3] = 5;
-    	xCorners[4] = 3;
-    	xCorners[5] = -1;
-    	xCorners[6] = -7;
-    	xCorners[7] = -9;
-    	xCorners[8] = -4;
-    	yCorners[0] = 8;
-    	yCorners[1] = 4;
-    	yCorners[2] = -4;
-    	yCorners[3] = -6;
-    	yCorners[4] = -9;
-    	yCorners[5] = -10;
-    	yCorners[6] = -8;
-    	yCorners[7] = 0;
-    	yCorners[8] = 4;
+		xCorners = new int[]{0, 7, 9, 5, 3, -1, -7, -9, -4};
+    	yCorners = new int[]{8, 4, -4, -6, -9, -10, -8, 0, 4};
 	}
 	public void move(){
 		turn(rotSpeed);

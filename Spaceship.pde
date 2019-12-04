@@ -5,32 +5,8 @@ class Spaceship extends Floater
     	myColor=255;
     	myCenterX=myCenterY=250;
     	corners = 12;
-    	xCorners = new int[corners];
-    	yCorners = new int[corners];
-    	xCorners[0] = 8;
-    	xCorners[1] = -9;
-    	xCorners[2] = -11;
-    	xCorners[3] = -3;
-    	xCorners[4] = -6;
-    	xCorners[5] = -5;
-    	xCorners[6] = -8;
-    	xCorners[7] = -5;
-    	xCorners[8] = -6;
-    	xCorners[9] = -3;
-    	xCorners[10] = -11;
-    	xCorners[11] = -9;
-    	yCorners[0] = 0;
-    	yCorners[1] = -17;
-    	yCorners[2] = -15;
-    	yCorners[3] = -7;
-    	yCorners[4] = -4;
-    	yCorners[5] = -3;
-    	yCorners[6] = 0;
-    	yCorners[7] = 3;
-    	yCorners[8] = 4;
-    	yCorners[9] = 7;
-    	yCorners[10] = 15;
-    	yCorners[11] = 17;
+    	xCorners = new int[]{8, -9, -11, -3, -6, -5, -8, -5, -6, -3, -11, -9};
+    	yCorners = new int[]{0, -17, -15, -7, -4, -3, 0, 3, 4, 7, 15, 17};
     }
 
     public void hyperspace(){
@@ -83,6 +59,15 @@ class Spaceship extends Floater
     }
     public double getY(){
     	return myCenterY;
+    }
+    public double getPoint(){
+    	return myPointDirection;
+    }
+    public double getSpeedX(){
+    	return myDirectionX;	
+    }
+    public double getSpeedY(){
+    	return myDirectionY;
     }
 }
 

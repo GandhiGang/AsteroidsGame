@@ -1,10 +1,12 @@
 Spaceship epic = new Spaceship();
 Star [] gamer = new Star[200];
 ArrayList <Asteroid> balls = new ArrayList <Asteroid>();
+ArrayList <Bullet> shots = new ArrayList <Bullet>();
 boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean sIsPressed = false;
 boolean dIsPressed = false;
+boolean hIsPressed = false;
 boolean spaceIsPressed = false;
 public void setup() 
 {
@@ -12,7 +14,7 @@ public void setup()
   for(int i = 0; i < gamer.length; i++)
   	gamer[i] = new Star();
   for(int i = 0; i < 20; i++)
-  	balls.add(new Asteroid());
+  	balls.add(new Asteroid());	
 }
 public void draw() 
 {
@@ -27,7 +29,6 @@ public void draw()
   			balls.remove(i);
   			i--;
   		}	
-  		
   	}	
 	epic.show();
 	epic.move();
@@ -39,8 +40,15 @@ public void draw()
 		epic.turn(-5);
 	if(dIsPressed)
 		epic.turn(5);
-	if(spaceIsPressed)
+	if(hIsPressed)
 		epic.hyperspace();
+	if(spaceIsPressed)
+		shots.add(new Bullet(epic));
+	for(int i = 0; i < shots.size(); i++){
+		shots.get(i).show();
+		shots.get(i).move();
+	}
+
 }
 public void keyPressed(){
 	if(key == 'a')
@@ -51,6 +59,8 @@ public void keyPressed(){
 		wIsPressed = true;
 	if(key == 's')
 		sIsPressed = true;
+	if(key == 'h')
+		hIsPressed = true;
 	if(key == ' ')
 		spaceIsPressed = true;
 }	
@@ -63,6 +73,8 @@ public void keyReleased(){
 		wIsPressed = false;
 	if(key == 's')
 		sIsPressed = false;
+	if(key == 'h')
+		hIsPressed = false;
 	if(key == ' ')
 		spaceIsPressed = false;
 }	
