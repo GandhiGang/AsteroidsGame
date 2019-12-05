@@ -19,7 +19,7 @@ class Spaceship extends Floater
     {             
     fill(myColor);   
     stroke(myColor);    
-    
+    strokeWeight(3);
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
 
@@ -38,14 +38,12 @@ class Spaceship extends Floater
     endShape(CLOSE);
     if(wIsPressed){
     stroke(255, 140, 0);
-    strokeWeight(3);
     line(-12, 0, -18, 0);
     line(-12, -6, -16, -9);
     line(-12, 6, -16, 9);
 	}
 	if(sIsPressed){
     stroke(64, 64, 255);
-    strokeWeight(3);
     line(-12, 0, -18, 0);
     line(-12, -6, -16, -9);
     line(-12, 6, -16, 9);
