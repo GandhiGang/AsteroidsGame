@@ -19,6 +19,10 @@ public void setup()
 public void draw() 
 {
 	background(0);
+	if(balls.size()==0){
+		for(int i = 0; i < 20; i++)
+  			balls.add(new Asteroid());	
+	}
 	for(int i = 0; i < gamer.length; i++)
   		gamer[i].show();
   	for(int i = 0; i < balls.size(); i++){
@@ -46,8 +50,10 @@ public void draw()
 	for(int i = 0; i < shots.size(); i++){
 		shots.get(i).show();
 		shots.get(i).move();
+	}
+	for(int i = 0; i < shots.size(); i++){
 		for(int j = 0; j < balls.size(); j++){
-			if(dist((float)balls.get(j).getX(), (float)balls.get(j).getY(), (float)shots.get(i).getX(), (float)shots.get(i).getY())<3){
+			if(dist((float)balls.get(j).getX(), (float)balls.get(j).getY(), (float)shots.get(i).getX(), (float)shots.get(i).getY())<15){
 				balls.remove(j);
 				shots.remove(i);
 				break;

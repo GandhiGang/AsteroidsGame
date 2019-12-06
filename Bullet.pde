@@ -12,6 +12,12 @@ class Bullet extends Floater {
 		fill(255, 0, 0);
 		ellipse((float)myCenterX, (float)myCenterY, 5, 5);	
 	}
+	public void move(){
+		myCenterX += myDirectionX;    
+    	myCenterY += myDirectionY;
+    	if(myCenterX > width || myCenterX < 0 || myCenterY > height || myCenterY < 0)
+    		shots.remove(this);
+	}
 	public double getX(){
 		return myCenterX;
 	}
